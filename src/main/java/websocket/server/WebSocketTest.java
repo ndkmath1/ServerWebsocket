@@ -26,12 +26,10 @@ public class WebSocketTest {
         }
         server.setConnectors(connectors);
 //        IntStream.range(0, 10).parallel()
-        for (int i = 0; i < num; ++i) {
-            openSocketServer(Integer.parseInt("800" + i), server);
-        }
+        openSocketServer(server);
     }
 
-    public static void openSocketServer(int port, Server server) {
+    public static void openSocketServer(Server server) {
 //        Server server = new Server(port);
         WebSocketHandler wsHandler = new WebSocketHandler() {
             @Override
